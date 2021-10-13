@@ -81,28 +81,11 @@ extension ViewController: CNContactPickerDelegate {
     
     
     // MARK: Delegate
-    
-    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
-        print(#function)
-    }
-    
-//    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
-//        print(#function, contacts)
-//    }
 
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-        print(#function, contact)
         let person = Person(name: contact.givenName + " " + contact.familyName, id: contact.identifier, source: contact)
         persons.append(person)
         tableView.reloadData()
     }
 
-//    func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
-//        print(#function, contactProperty)
-//    }
-
-//    func contactPicker(_ picker: CNContactPickerViewController, didSelectContactProperties contactProperties: [CNContactProperty]) {
-//        print(#function, contactProperties)
-//    }
-    
 }
